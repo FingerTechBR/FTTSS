@@ -13,9 +13,6 @@ namespace FTTSS
         private string sClientApplicationDirectory;
         private string sIPAddress;
 
-
-
-
         public string SUserName { get => sUserName; set => sUserName = value; }
         public string SDomain { get => sDomain; set => sDomain = value; }
         public string SClientApplicationDirectory { get => sClientApplicationDirectory; set => sClientApplicationDirectory = value; }
