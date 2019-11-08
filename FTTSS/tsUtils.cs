@@ -20,7 +20,7 @@ namespace FTTSS
         string sIPAddress = string.Empty;
 
 
-        public tsUser retornausuario()
+        public  tsUser retornausuario()
         {
 
             RDPDLL.WTS_CLIENT_ADDRESS oClientAddres = new RDPDLL.WTS_CLIENT_ADDRESS();
