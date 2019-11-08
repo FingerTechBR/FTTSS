@@ -24,3 +24,4 @@ namespace FTTSS
             return base.ToString();
         }
     }
+}
