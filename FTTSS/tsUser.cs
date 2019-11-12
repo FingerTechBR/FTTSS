@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FTTSS
 {
-    class tsUser
+    public class tsUser
     {
         private string sUserName;
         private string sDomain;
