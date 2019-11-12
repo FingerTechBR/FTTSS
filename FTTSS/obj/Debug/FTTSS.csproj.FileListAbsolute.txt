@@ -3,3 +3,4 @@ C:\Users\Lincoln\source\repos\FTTSS\FTTSS\bin\Debug\FTTSS.pdb
 C:\Users\Lincoln\source\repos\FTTSS\FTTSS\obj\Debug\FTTSS.csproj.CoreCompileInputs.cache
 C:\Users\Lincoln\source\repos\FTTSS\FTTSS\obj\Debug\FTTSS.dll
 C:\Users\Lincoln\source\repos\FTTSS\FTTSS\obj\Debug\FTTSS.pdb
+C:\Users\Lincoln\source\repos\FTTSS\FTTSS\obj\Debug\FTTSS.csprojAssemblyReference.cache

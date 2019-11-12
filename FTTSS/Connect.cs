@@ -12,45 +12,45 @@ namespace FTTSS
         String WinUserNameOnly = System.Environment.UserName.ToString();
         tsUser tsuser;
         tsUtils tsutils;
-        public string valor = "s";
-        //public static int Capturar = 0;
-        //public static int Enroll = 0;
+        public Ambiente ambiente;
+   
        
-         public struct methods
+
+
+
+        public struct methods
         {
-           public const int Capturar = 0;
-           public const int Enroll = 1;
+            public const int Enroll = 0;
+            public const int Capturar = 1;           
         }
 
-        public struct solicitante
-        {
-           
-
-
-        }
-
-        
-
-
-
        
+      
+
+
+
+
         public Connect()
         {
             tsuser = new tsUser();
             tsutils = new tsUtils();
             tsuser = tsutils.retornausuario();
-            //static string ip = tsuser.SIPAddress;
+
+            ambiente = new Ambiente(tsuser);
+           
+           
+
+        }
 
 
 
-
-    }
 
     public string getDigitalString(int digital)
         {
-            return enviarRequisição(tsuser.SIPAddress, digital);
+            //return enviarRequisição(tsuser.SIPAddress, digital);
+            return enviarRequisição("192.168.1.52", digital);
 
-
+            
 
         }
 
@@ -76,21 +76,17 @@ namespace FTTSS
 
                 // Translate the passed message into ASCII and store it as a Byte array.
                 Byte[] data = System.Text.Encoding.ASCII.GetBytes(envio.ToString());
-
                 // Get a client stream for reading and writing.
                 // Stream stream = client.GetStream();
-
                 NetworkStream stream = client.GetStream();
-
                 // Send the message to the connected TcpServer. 
                 stream.Write(data, 0, data.Length);
-
                
 
                 // Receive the TcpServer.response.
 
                 // Buffer to store the response bytes.
-                data = new Byte[20000];
+                data = new Byte[40000];
 
                 // String to store the response ASCII representation.
                 String responseData = String.Empty;
