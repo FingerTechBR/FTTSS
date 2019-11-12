@@ -12,21 +12,41 @@ namespace FTTSS
         String WinUserNameOnly = System.Environment.UserName.ToString();
         tsUser tsuser;
         tsUtils tsutils;
-        public static int Capturar = 0;
-        public static int Enroll = 0;
-         
+        public string valor = "s";
+        //public static int Capturar = 0;
+        //public static int Enroll = 0;
+       
+         public struct methods
+        {
+           public const int Capturar = 0;
+           public const int Enroll = 1;
+        }
+
+        public struct solicitante
+        {
+           
+
+
+        }
+
+        
+
+
+
        
         public Connect()
         {
             tsuser = new tsUser();
             tsutils = new tsUtils();
             tsuser = tsutils.retornausuario();
-           
-            
+            //static string ip = tsuser.SIPAddress;
 
-        }
 
-        public string getDigitalString(int digital)
+
+
+    }
+
+    public string getDigitalString(int digital)
         {
             return enviarRequisição(tsuser.SIPAddress, digital);
 
