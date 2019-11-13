@@ -12,95 +12,72 @@ namespace FTTSS
         String WinUserNameOnly = System.Environment.UserName.ToString();
         tsUser tsuser;
         tsUtils tsutils;
-        public string valor = "s";
-        //public static int Capturar = 0;
-        //public static int Enroll = 0;
+        public Ambiente ambiente; 
        
-         public struct methods
+
+
+
+        public struct methods
         {
-           public const int Capturar = 0;
-           public const int Enroll = 1;
+            public const int Enroll = 0;
+            public const int Capturar = 1;           
         }
 
-        public struct solicitante
-        {
-           
 
-
-        }
-
-        
-
-
-
-       
         public Connect()
         {
             tsuser = new tsUser();
             tsutils = new tsUtils();
             tsuser = tsutils.retornausuario();
-            //static string ip = tsuser.SIPAddress;
-
-
-
-
-    }
-
-    public string getDigitalString(int digital)
-        {
-            return enviarRequisição(tsuser.SIPAddress, digital);
-
-
+            ambiente = new Ambiente(tsuser);
+           
+           
 
         }
 
 
 
 
+    public string getDigitalString(int digital)
+        {
+            return enviarRequisição(tsuser.SIPAddress, digital);
+            //return enviarRequisição("192.168.1.52", digital); < para debug local
+
+        }
 
         private String enviarRequisição(String ip, int envio)
         {
             Int32 port = 13000;
 
-
             try
-            {
-                // Create a TcpClient.
-                // Note, for this client to work you need to have a TcpServer 
-                // connected to the same address as specified by the server, port
-                // combination.
-            
-               
+            {                              
 
                 TcpClient client = new TcpClient(ip, port);
 
                 // Translate the passed message into ASCII and store it as a Byte array.
                 Byte[] data = System.Text.Encoding.ASCII.GetBytes(envio.ToString());
-
                 // Get a client stream for reading and writing.
                 // Stream stream = client.GetStream();
-
                 NetworkStream stream = client.GetStream();
-
                 // Send the message to the connected TcpServer. 
                 stream.Write(data, 0, data.Length);
-
                
 
                 // Receive the TcpServer.response.
 
                 // Buffer to store the response bytes.
-                data = new Byte[20000];
+                data = new Byte[100000];
 
                 // String to store the response ASCII representation.
                 String responseData = String.Empty;
                 // Read the first batch of the TcpServer response bytes.
                 Int32 bytes = stream.Read(data, 0, data.Length);
                 responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-                Console.WriteLine("Received: " + responseData);
+              
+                client.Close();
                 return responseData;
                 
-                client.Close();
+               
             }
             catch (ArgumentNullException e)
             {
@@ -108,5 +85,9 @@ namespace FTTSS
             }
 
         }
+
+
+
+
     }
 }

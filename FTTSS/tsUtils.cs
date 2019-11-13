@@ -85,29 +85,6 @@ namespace FTTSS
                         users.SClientApplicationDirectory = Marshal.PtrToStringAnsi(pAddress);
                     }
 
-
-
-
-                    //        Console.WriteLine("Session ID : " + oSessionInfo.iSessionID);
-                    //        Console.WriteLine("Session State : " + oSessionInfo.oState);
-                    //        Console.WriteLine("Workstation Name : " +
-                    //    oSessionInfo.sWinsWorkstationName);
-                    //        Console.WriteLine("IP Address : " + sIPAddress);
-                    //        Console.WriteLine("User Name : " + sDomain + @"\" + sUserName);
-                    //        Console.WriteLine("Client Display Resolution: " +
-                    //oClientDisplay.iHorizontalResolution + " x " +
-                    //    oClientDisplay.iVerticalResolution);
-                    //        Console.WriteLine("Client Display Colour Depth: " +
-                    //    oClientDisplay.iColorDepth);
-                    //        Console.WriteLine("Client Application Directory: " +
-                    //    sClientApplicationDirectory);
-
-                    //        Console.WriteLine("-----------------------");
-                    //    }
-
-                    //    RDPDLL.WTSFreeMemory(pSessionInfo);
-                    // Console.ReadKey();
-
                     arraylist.Add(users);
 
 
