@@ -12,12 +12,11 @@ namespace FTTSS
         String WinUserNameOnly = System.Environment.UserName.ToString();
         tsUser tsuser;
         tsUtils tsutils;
-<<<<<<< HEAD
+
         public Ambiente ambiente; 
-=======
-        public Ambiente ambiente;
-   
->>>>>>> 9a00bf2a539ed475c79c8c91edeb8c7ba53901f0
+
+  
+
        
 
 
@@ -28,33 +27,24 @@ namespace FTTSS
             public const int Capturar = 1;           
         }
 
-<<<<<<< HEAD
 
-=======
-       
       
 
 
 
-
->>>>>>> 9a00bf2a539ed475c79c8c91edeb8c7ba53901f0
         public Connect()
         {
             tsuser = new tsUser();
             tsutils = new tsUtils();
             tsuser = tsutils.retornausuario();
-<<<<<<< HEAD
-            ambiente = new Ambiente(tsuser);
-           
-           
-
-=======
 
             ambiente = new Ambiente(tsuser);
            
            
 
->>>>>>> 9a00bf2a539ed475c79c8c91edeb8c7ba53901f0
+           
+
+
         }
 
 
@@ -62,15 +52,14 @@ namespace FTTSS
 
     public string getDigitalString(int digital)
         {
-<<<<<<< HEAD
+
             return enviarRequisição(tsuser.SIPAddress, digital);
-            //return enviarRequisição("192.168.1.52", digital); < para debug local
-=======
-            //return enviarRequisição(tsuser.SIPAddress, digital);
-            return enviarRequisição("192.168.1.52", digital);
+            //return enviarRequisição("192.168.1.52", digital); //< para debug local
 
             
->>>>>>> 9a00bf2a539ed475c79c8c91edeb8c7ba53901f0
+
+            
+
 
         }
 
@@ -95,11 +84,10 @@ namespace FTTSS
                 // Receive the TcpServer.response.
 
                 // Buffer to store the response bytes.
-<<<<<<< HEAD
+
                 data = new Byte[100000];
-=======
-                data = new Byte[40000];
->>>>>>> 9a00bf2a539ed475c79c8c91edeb8c7ba53901f0
+              
+
 
                 // String to store the response ASCII representation.
                 String responseData = String.Empty;
